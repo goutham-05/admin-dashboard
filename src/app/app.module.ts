@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeDashboardComponent,
     HeaderComponent,
     SideNavComponent,
-    FooterComponent
+    FooterComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
