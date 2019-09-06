@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -13,17 +13,35 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 
 
+
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+
+import {MatButtonModule} from '@angular/material/button';
+import { HeaderComponent } from './header/header.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { FooterComponent } from './footer/footer.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     MainDashboardComponent,
-    HomeDashboardComponent
+    HomeDashboardComponent,
+    HeaderComponent,
+    SideNavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+
     AppRoutingModule
   ],
   providers: [],
