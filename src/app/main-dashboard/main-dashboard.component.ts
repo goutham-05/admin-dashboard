@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from '../user.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Component({
   selector: 'app-main-dashboard',
   templateUrl: './main-dashboard.component.html',
@@ -7,14 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainDashboardComponent implements OnInit {
 
-  events: string[] = [];
-  opened: boolean;
 
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
-
-  constructor() { }
+  user;
+  token;
+  constructor(private userService: UserService, private http: HttpClient) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    console.log(this.user);
+    this.token = this.user.token;
+    console.log('token id', this.token);
+    this.getUserRoles();
   }
+
+  getUserRoles() {
+    this.userService.getRoles(this.user, {headers: new HttpHeaders().set('Authorization', '  ' + this.token)}).subscribe(res => {
+      console.log(res);
+    })
+  }
+
 
 }

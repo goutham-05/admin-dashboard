@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -36,6 +40,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -46,7 +52,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

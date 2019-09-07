@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -9,15 +11,31 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
+    
+  }
+
+  getData() {
+    const userData = JSON.parse(localStorage.getItem('user'));
+    console.log(userData);
   }
 
 
 
   login() {
-    this.router.navigate(['main-dashboard']);
+    const data = {
+      email: 'abc@gmail.com',
+      password: '123456'
+    };
+    this.userService.loginUser(data).subscribe(res => {
+      console.log(res);
+      localStorage.setItem('user', JSON.stringify(res.data));
+      this.getData();
+      this.router.navigate(['main-dashboard']);
+
+    });
   }
 
 }
