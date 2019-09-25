@@ -16,11 +16,11 @@ export class MainDashboardComponent implements OnInit {
   constructor(private userService: UserService, private http: HttpClient) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user'));
-    console.log(this.user);
-    this.token = this.user.token;
-    console.log('token id', this.token);
-    this.getUserRoles();
+    // this.user = JSON.parse(localStorage.getItem('user'));
+    // console.log(this.user);
+    // this.token = this.user.token;
+    // console.log('token id', this.token);
+    // this.getUserRoles();
   }
 
   getUserRoles() {
