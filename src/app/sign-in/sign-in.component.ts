@@ -29,13 +29,14 @@ export class SignInComponent implements OnInit {
       email: 'abc@gmail.com',
       password: '123456'
     };
-    this.userService.loginUser(data).subscribe(res => {
-      console.log(res);
-      localStorage.setItem('user', JSON.stringify(res.data));
-      this.getData();
-      this.router.navigate(['main-dashboard']);
+    // this.userService.loginUser(data).subscribe(res => {
+    //   console.log(res);
+    //   localStorage.setItem('user', JSON.stringify(res.data));
+    //   this.getData();
+    //   this.router.navigate(['main-dashboard']);
 
-    });
+    // });
+    this.router.navigate(['main-dashboard']);
   }
 
 }

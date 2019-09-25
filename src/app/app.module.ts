@@ -25,6 +25,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserService } from './user.service';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UserService } from './user.service';
     HeaderComponent,
     SideNavComponent,
     FooterComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

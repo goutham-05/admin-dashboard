@@ -24,9 +24,9 @@ export class MainDashboardComponent implements OnInit {
   }
 
   getUserRoles() {
-    this.userService.getRoles(this.user, {headers: new HttpHeaders().set('Authorization', '  ' + this.token)}).subscribe(res => {
+    this.userService.getRoles(this.user, {headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.token)}).subscribe(res => {
       console.log(res);
-    })
+    });
   }
 
 

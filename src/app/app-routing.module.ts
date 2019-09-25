@@ -4,6 +4,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'update-user',
         component: UpdateUserComponent
+      },
+      {
+        path: 'users-list',
+        component: UsersListComponent
       }
     ]
   }
